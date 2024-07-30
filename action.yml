@@ -1,8 +1,8 @@
-name: 'Checkout'
-description: 'Checkout a Git repository at a particular version'
+name: "Checkout"
+description: "Checkout a Git repository at a particular version"
 inputs:
   repository:
-    description: 'Repository name with owner. For example, actions/checkout'
+    description: "Repository name with owner. For example, actions/checkout"
     default: ${{ github.repository }}
   ref:
     description: >
@@ -50,12 +50,12 @@ inputs:
       The user to use when connecting to the remote SSH host. By default 'git' is used.
     default: git
   persist-credentials:
-    description: 'Whether to configure the token or SSH key with the local git config'
+    description: "Whether to configure the token or SSH key with the local git config"
     default: true
   path:
-    description: 'Relative path under $GITHUB_WORKSPACE to place the repository'
+    description: "Relative path under $GITHUB_WORKSPACE to place the repository"
   clean:
-    description: 'Whether to execute `git clean -ffdx && git reset --hard HEAD` before fetching'
+    description: "Whether to execute `git clean -ffdx && git reset --hard HEAD` before fetching"
     default: true
   filter:
     description: >
@@ -72,16 +72,16 @@ inputs:
       Specifies whether to use cone-mode when doing a sparse checkout.
     default: true
   fetch-depth:
-    description: 'Number of commits to fetch. 0 indicates all history for all branches and tags.'
+    description: "Number of commits to fetch. 0 indicates all history for all branches and tags."
     default: 1
   fetch-tags:
-    description: 'Whether to fetch tags, even if fetch-depth > 0.'
+    description: "Whether to fetch tags, even if fetch-depth > 0."
     default: false
   show-progress:
-    description: 'Whether to show progress status output when fetching.'
+    description: "Whether to show progress status output when fetching."
     default: true
   lfs:
-    description: 'Whether to download Git-LFS files'
+    description: "Whether to download Git-LFS files"
     default: false
   submodules:
     description: >
@@ -98,13 +98,12 @@ inputs:
   github-server-url:
     description: The base URL for the GitHub instance that you are trying to clone from, will use environment defaults to fetch from the same instance that the workflow is running from unless specified. Example URLs are https://github.com or https://my-ghes-server.example.com
     required: false
+
 runs:
-  using: 'docker'
-  image: 'Dockerfile'
-
-  entrypoint: 'node /action/dist/index.js'
-  post-entrypoint: 'node /action/dist/index.js'
-
+  using: "docker"
+  image: "Dockerfile"
+  entrypoint: "node action/dist/index.js"
+  post-entrypoint: "node action/dist/index.js"
 
   # using: node20
   # main: dist/index.js
