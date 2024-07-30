@@ -102,9 +102,5 @@ inputs:
 runs:
   using: "docker"
   image: "Dockerfile"
-  # entrypoint: "/action/dist/entrypoint.sh"
-  # post-entrypoint: "/action/dist/entrypoint.sh"
-
-  # using: node20
-  # main: dist/index.js
-  # post: dist/index.js
+  entrypoint: "/action/dist/entrypoint.sh"
+  post-entrypoint: "/action/dist/entrypoint.sh"

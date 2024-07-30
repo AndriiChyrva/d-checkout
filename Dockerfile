@@ -11,4 +11,4 @@ RUN chmod +rwx /action/dist/problem-matcher.json
 # RUN ls -la /action
 # RUN ls -la /action/dist
 
-ENTRYPOINT ["node", "/action/dist/index.js"]
+# ENTRYPOINT ["node", "/action/dist/index.js"]
