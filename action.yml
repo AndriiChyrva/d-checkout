@@ -102,8 +102,8 @@ inputs:
 runs:
   using: "docker"
   image: "Dockerfile"
-  entrypoint: "node /action/dist/index.js"
-  post-entrypoint: "node /action/dist/index.js"
+  entrypoint: "/action/dist/index.js"
+  post-entrypoint: "/action/dist/index.js"
 
   # using: node20
   # main: dist/index.js
