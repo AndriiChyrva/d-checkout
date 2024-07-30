@@ -1,3 +1,3 @@
 FROM node:20
 
-ADD ./action /
+ADD ./action /home/runner/
